@@ -37,7 +37,17 @@ def fetch_data():
 df = fetch_data()
 
 # Streamlit app
-st.title("1000ttp Applicant Insights")
+st.title("1000ttp Applicants Insights")
+
+paragraph = (
+    "This application provides insights into the scholarship applicants for 1000ttp, sponsored by Hon. Sesi Whingan. It is updated in real-time based on all registrations. "
+    "Built with ❤️ by the team at "
+    "[Codeverse Africa](https://www.codeverse.africa)."
+)
+
+
+# Display the paragraph as markdown
+st.markdown(paragraph)
 
 
 # Percentage of preferred programs
