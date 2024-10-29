@@ -1,17 +1,13 @@
-import os
 import pandas as pd
 import psycopg2
 import streamlit as st
 import plotly.express as px
-from dotenv import load_dotenv
 
-
-load_dotenv()
-
-DB_HOST = os.getenv("DB_HOST")
-DB_NAME = os.getenv("DB_NAME")
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
+# Fetch database connection details from Streamlit secrets
+DB_HOST = st.secrets["database"]["DB_HOST"]
+DB_NAME = st.secrets["database"]["DB_NAME"]
+DB_USER = st.secrets["database"]["DB_USER"]
+DB_PASSWORD = st.secrets["database"]["DB_PASSWORD"]
 
 # Function to connect to PostgreSQL and fetch data
 def fetch_data():
